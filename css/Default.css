@@ -1,0 +1,25 @@
+.ui-content
+{
+	background-image: url(../img/default/background.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;	
+}
+.playeur1
+{
+	background-image:url(../img/default/b.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.playeur2
+{
+	background-image:url(../img/default/a.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+body
+{ background-image:url(../img/default/charge.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+ }

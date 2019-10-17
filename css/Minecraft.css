@@ -1,0 +1,25 @@
+.ui-content
+{
+	background-image: url(../img/minecraft/background.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;	
+}
+.playeur1
+{
+	background-image:url(../img/minecraft/b.gif);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.playeur2
+{
+	background-image:url(../img/minecraft/a.gif);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+body
+{ background-image:url(../img/minecraft/charge.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+ }

@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Morpion 1.0.3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery/jquery.mobile-1.4.5.min.css" />
+
+	<script src="js/jquery/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/Default.css" id="link">
+
+
+	<meta charset="utf-8">
+	<meta name="description" content="Jeu de Morpion à deux Joueur">
+    <meta name="keywords" content="Jeu,Morpion,deux Joueur">
+    <meta name="author" content="VIRY Brandon">
+	
+	<link rel="icon" type="image/ico" href="img/logo.png" />
+</head>
+
+<body>
+	<div data-role="page" id="p1" data-theme="b">
+
+	<div data-role="header">
+		<h1>MENUE PRINCIPAL</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<img src="img/logo.png"alt="logo">
+	<a href="#p2" class="ui-btn">Jouer</a>
+	<a href="#p3" class="ui-btn">Option</a>
+	<a href="#p4" class="ui-btn">Quitter</a>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4></h4>
+	</div><!-- /footer -->
+	</div>
+	
+
+
+
+	<div data-role="page" id="p2" data-theme="b">
+
+	<div data-role="header">
+		<a href="#" class="ui-btn" data-rel="back">Go Back</a>
+		<a href="" onclick="reload('RELOAD')" class="ui-btn" >Reset</a>
+		<h1 >JOUER</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	
+	
+	<table border="3px">
+		<tr>
+			<td class="" id="1"></td>
+			<td class="" id="2"></td>
+			<td class=""id="3"></td>
+		</tr>
+		<tr>
+			<td class=""id="4"></td>
+			<td class=""id="5"></td>
+			<td class=""id="6"></td>
+		</tr>
+		<tr>
+			<td class=""id="7"></td>
+			<td class=""id="8"></td>
+			<td class=""id="9"></td>
+		</tr>
+
+	</table>
+	
+	
+	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4 id="win"></h4>
+	</div><!-- /footer -->
+	</div>
+		<div data-role="page" id="p4" data-theme="b">
+
+	<div data-role="header">
+		<h1></h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<h4 style="text-align: center;">FERMER LE NAVIGATEUR !</h4>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4></h4>
+	</div><!-- /footer -->
+	</div>
+
+	<div data-role="page" id="p3" data-theme="b">
+
+	<div data-role="header">
+		<a href="#" class="ui-btn" data-rel="back">Go Back</a>
+		<a href="" onclick="reload('RELOAD')" class="ui-btn" data-rel="back">Reset</a>
+		<h1>OPTION</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<a href="#Default" class="ui-btn">Default</a>
+	<a href="#Naruto" class="ui-btn">Naruto</a>
+	<a href="#Minecraft" class="ui-btn">Minecraft</a>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4></h4>
+	</div><!-- /footer -->
+	</div>
+	<script type="text/javascript" src="js/confirme.js"></script>
+	<script type="text/javascript">
+		var conteneur = 0
+		var play = 0 
+		$("td").click(function () {
+			conteneur =conteneur +1 ;
+			if (conteneur%2 == 0 ) {
+			 play = 1
+		} 
+		else {
+			play = 2
+		}
+			$(this).addClass("playeur"+play);
+			
+			if ($("[id='1']").attr("class")==$("[id='2']").attr("class") && $("[id='2']").attr("class")==$("[id='3']").attr("class") && $("[id='1']").attr("class")!=""&& $("[id='2']").attr("class")!=""&& $("[id='3']").attr("class")!="" ) 
+			{
+				$("#win").text("Victoire: "+$("[id='2']").attr("class"));
+				reload($("#win").text())
+			}
+			if ($("[id='4']").attr("class")==$("[id='5']").attr("class") && $("[id='5']").attr("class")==$("[id='6']").attr("class") && $("[id]").attr("class")!="" && $("[id='4']").attr("class")!=""&& $("[id='5']").attr("class")!=""&& $("[id='6']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='5']").attr("class"));
+				reload($("#win").text())
+			}
+			if ($("[id='7']").attr("class")==$("[id='8']").attr("class") && $("[id='8']").attr("class")==$("[id='9']").attr("class") && $("[id]").attr("class")!="" && $("[id='7']").attr("class")!=""&& $("[id='8']").attr("class")!=""&& $("[id='9']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='8']").attr("class"));
+				reload($("#win").text())
+			}
+			if ($("[id='1']").attr("class")==$("[id='4']").attr("class") && $("[id='4']").attr("class")==$("[id='7']").attr("class") && $("[id]").attr("class")!="" && $("[id='1']").attr("class")!=""&& $("[id='4']").attr("class")!=""&& $("[id='7']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='4']").attr("class"));
+				reload($("#win").text())
+			}
+			if ($("[id='2']").attr("class")==$("[id='5']").attr("class") && $("[id='5']").attr("class")==$("[id='8']").attr("class") && $("[id]").attr("class")!="" && $("[id='2']").attr("class")!=""&& $("[id='5']").attr("class")!=""&& $("[id='8']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='5']").attr("class"));
+				reload($("#win").text())
+			}
+			if ($("[id='3']").attr("class")==$("[id='6']").attr("class") && $("[id='6']").attr("class")==$("[id='9']").attr("class") && $("[id]").attr("class")!="" && $("[id='3']").attr("class")!=""&& $("[id='6']").attr("class")!=""&& $("[id='9']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='6']").attr("class"));
+				reload($("#win").text())
+			}	
+			if ($("[id='1']").attr("class")==$("[id='5']").attr("class") && $("[id='5']").attr("class")==$("[id='9']").attr("class") && $("[id]").attr("class")!="" && $("[id='1']").attr("class")!=""&& $("[id='5']").attr("class")!=""&& $("[id='9']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='5']").attr("class"));
+				reload($("#win").text())
+			}	
+			if ($("[id='3']").attr("class")==$("[id='5']").attr("class") && $("[id='5']").attr("class")==$("[id='7']").attr("class") && $("[id]").attr("class")!="" && $("[id='3']").attr("class")!=""&& $("[id='5']").attr("class")!=""&& $("[id='7']").attr("class")!="") 
+			{
+				$("#win").text("Victoire: "+$("[id='5']").attr("class"));
+				reload($("#win").text())
+			}	
+					
+
+
+
+
+		});
+		$("[href='#Naruto']").click(function(){
+  			$("#link").attr("href","css/Naruto.css")
+  		});
+
+  		$("[href='#Default']").click(function(){
+  			$("#link").attr("href","css/Default.css")
+  		});
+  		$("[href='#Minecraft']").click(function(){
+  			$("#link").attr("href","css/Minecraft.css")
+  		});
+
+	</script>
+</body>
+</html>
